@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolSchedulingSystem.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ScheduleDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+// Add services to the container.
+
 
 var app = builder.Build();
 
@@ -22,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=TSchedule}/{action=Create}/{id?}");
 
 app.Run();

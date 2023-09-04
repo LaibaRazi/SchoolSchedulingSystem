@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SchoolSchedulingSystem.Models.Teacher>
+@{
+}
+<h2>View All Employee</h2>
+<a asp-controller="TSchedule" asp-action="Create" class="btn btn-success">Create New Record</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_Teacher</td>
+                <td>@item.TeacherName</td>
+                <td>@item.u_one</td>
+                <td>@item.u_two</td>
+                <td>
+                   @* <a asp-controller="Employee" asp-action="edit" asp-routeid="@item.EmpID">Edit</a>
+                    <a asp-controller="Employee" asp-action="Delete" asp-routeid="@item.EmpID">Delete</a>*@
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
