@@ -4,7 +4,7 @@
 
 namespace SchoolSchedulingSystem.Migrations
 {
-    public partial class Firstcode : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,13 +30,13 @@ namespace SchoolSchedulingSystem.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TeacherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HTeacher = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    u_one = table.Column<int>(type: "int", nullable: false),
-                    u_two = table.Column<int>(type: "int", nullable: false),
-                    u_three = table.Column<int>(type: "int", nullable: false),
-                    u_four = table.Column<int>(type: "int", nullable: false),
-                    u_five = table.Column<int>(type: "int", nullable: false),
-                    u_six = table.Column<int>(type: "int", nullable: false),
-                    u_seven = table.Column<int>(type: "int", nullable: false)
+                    u_one = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_two = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_three = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_four = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_five = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_six = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    u_seven = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

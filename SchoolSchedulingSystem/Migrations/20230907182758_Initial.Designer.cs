@@ -11,14 +11,14 @@ using SchoolSchedulingSystem.Models;
 namespace SchoolSchedulingSystem.Migrations
 {
     [DbContext(typeof(ScheduleDbContext))]
-    [Migration("20230902042316_Firstcode")]
-    partial class Firstcode
+    [Migration("20230907182758_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.18")
+                .HasAnnotation("ProductVersion", "6.0.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -60,26 +60,33 @@ namespace SchoolSchedulingSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_five")
-                        .HasColumnType("int");
+                    b.Property<string>("u_five")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_four")
-                        .HasColumnType("int");
+                    b.Property<string>("u_four")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_one")
-                        .HasColumnType("int");
+                    b.Property<string>("u_one")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_seven")
-                        .HasColumnType("int");
+                    b.Property<string>("u_seven")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_six")
-                        .HasColumnType("int");
+                    b.Property<string>("u_six")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_three")
-                        .HasColumnType("int");
+                    b.Property<string>("u_three")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("u_two")
-                        .HasColumnType("int");
+                    b.Property<string>("u_two")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Teacher");
 

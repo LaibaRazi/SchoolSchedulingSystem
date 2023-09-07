@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\khanl\source\repos\SchoolSchedulingSystem\SchoolSchedulingSystem
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/GSchedule/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1NjaGVkdWxlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/GSchedule/GCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1NjaGVkdWxlXEdDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/GSchedule/GIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1NjaGVkdWxlXEdJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,10 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/TSchedule/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFNjaGVkdWxlXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/TSchedule/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFNjaGVkdWxlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/khanl/source/repos/SchoolSchedulingSystem/SchoolSchedulingSystem/Views/_ViewImports.cshtml]

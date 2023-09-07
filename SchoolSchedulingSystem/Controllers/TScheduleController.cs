@@ -11,8 +11,8 @@ namespace SchoolSchedulingSystem.Controllers
         // GET: TScheduleController
         public ActionResult Index()
         {
-            var getemployee = db.Teachers.ToList();
-            return View(getemployee);
+            var getteacher = db.Teachers.ToList();
+            return View(getteacher);
         }
 
         // GET: TScheduleController/Details/5
@@ -32,8 +32,10 @@ namespace SchoolSchedulingSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Teacher Model)
         {
-            
-                if (ModelState.IsValid) 
+            ViewBag.grade = db.Grades.ToList();
+
+
+            if (ModelState.IsValid) 
                 {
                     var data = new Teacher()
                     {
@@ -53,7 +55,7 @@ namespace SchoolSchedulingSystem.Controllers
                     return RedirectToAction("Index");
                
             }
-            return RedirectToAction("Index");
+            return View("Index", another_data);
 
         }
 
