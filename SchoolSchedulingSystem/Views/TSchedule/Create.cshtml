@@ -1,8 +1,8 @@
 ﻿@model SchoolSchedulingSystem.Models.Teacher
 
-
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
@@ -11,61 +11,17 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" asp-asp-controller="TSchedule">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TeacherName" class="control-label"></label>
-                <input asp-for="TeacherName" class="form-control" />
-                <span asp-validation-for="TeacherName" class="text-danger"></span>
+                <label asp-for="Tutor" class="control-label"></label>
+                <input asp-for="Tutor" class="form-control" />
+                <span asp-validation-for="Tutor" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HTeacher" class="control-label"></label>
-                <input asp-for="HTeacher" class="form-control" />
-                <span asp-validation-for="HTeacher" class="text-danger"></span>
-            </div>
-           @* <div class="form-group">
-                <label asp-for="u_one" class="control-label"></label>
-                <input asp-for="u_one" class="form-control" />
-                <span asp-validation-for="u_one" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="u_one" class="control-label"></label>
-                <select asp-for="u_one">
-                    
-                        @foreach (Grade item in ViewBag.grade){
-                            <option value="@item.Class">@item.Class</option>}
-                    
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_two" class="control-label"></label>
-                <input asp-for="u_two" class="form-control" />
-                <span asp-validation-for="u_two" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_three" class="control-label"></label>
-                <input asp-for="u_three" class="form-control" />
-                <span asp-validation-for="u_three" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_four" class="control-label"></label>
-                <input asp-for="u_four" class="form-control" />
-                <span asp-validation-for="u_four" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_five" class="control-label"></label>
-                <input asp-for="u_five" class="form-control" />
-                <span asp-validation-for="u_five" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_six" class="control-label"></label>
-                <input asp-for="u_six" class="form-control" />
-                <span asp-validation-for="u_six" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="u_seven" class="control-label"></label>
-                <input asp-for="u_seven" class="form-control" />
-                <span asp-validation-for="u_seven" class="text-danger"></span>
+                <label asp-for="Subj_of_Teacher" class="control-label"></label>
+                <input asp-for="Subj_of_Teacher" class="form-control" />
+                <span asp-validation-for="Subj_of_Teacher" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -78,6 +34,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -16,6 +16,12 @@ namespace SchoolSchedulingSystem.Controllers
         
         public IActionResult GCreate()
         {
+            ViewBag.Teach = db.Teachers.ToList();
+            
+          
+         
+
+
             return View();
         }
         [HttpPost]
@@ -48,6 +54,7 @@ namespace SchoolSchedulingSystem.Controllers
             { 
                 edata.Id = grade.Id;
                 edata.Section = grade.Section;
+                edata.Tutor = grade.Tutor;
                 db.SaveChanges();
                 return RedirectToAction("GIndex");
             }

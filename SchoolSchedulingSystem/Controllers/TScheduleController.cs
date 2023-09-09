@@ -24,6 +24,7 @@ namespace SchoolSchedulingSystem.Controllers
         // GET: TScheduleController/Create
         public ActionResult Create()
         {
+         
             return View();
         }
 
@@ -40,22 +41,15 @@ namespace SchoolSchedulingSystem.Controllers
                     var data = new Teacher()
                     {
                       
-                        TeacherName = Model.TeacherName,
-                        HTeacher = Model.HTeacher,
-                        u_one = Model.u_one,
-                        u_two = Model.u_two,
-                        u_three = Model.u_three,
-                        u_four = Model.u_four,
-                        u_five = Model.u_five,
-                        u_six = Model.u_six,
-                        u_seven = Model.u_seven,
+                        Tutor = Model.Tutor,
+                        Subj_of_Teacher=Model.Subj_of_Teacher
                     };
                     db.Teachers.Add(data);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                
             }
-            return View("Index", another_data);
+            return View("Index");
 
         }
 

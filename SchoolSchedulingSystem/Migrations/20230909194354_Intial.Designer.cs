@@ -11,8 +11,8 @@ using SchoolSchedulingSystem.Models;
 namespace SchoolSchedulingSystem.Migrations
 {
     [DbContext(typeof(ScheduleDbContext))]
-    [Migration("20230907182758_Initial")]
-    partial class Initial
+    [Migration("20230909194354_Intial")]
+    partial class Intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,12 @@ namespace SchoolSchedulingSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Tutor")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Tutor");
 
                     b.ToTable("Grades");
                 });
@@ -52,45 +57,28 @@ namespace SchoolSchedulingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Teacher"), 1L, 1);
 
-                    b.Property<string>("HTeacher")
+                    b.Property<string>("Subj_of_Teacher")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TeacherName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_five")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_four")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_one")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_seven")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_six")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_three")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("u_two")
+                    b.Property<string>("Tutor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Teacher");
 
                     b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("SchoolSchedulingSystem.Models.Grade", b =>
+                {
+                    b.HasOne("SchoolSchedulingSystem.Models.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("Tutor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Teacher");
                 });
 #pragma warning restore 612, 618
         }
