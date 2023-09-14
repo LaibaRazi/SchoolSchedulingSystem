@@ -21,6 +21,27 @@ namespace SchoolSchedulingSystem.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("SchoolSchedulingSystem.Models.Admin", b =>
+                {
+                    b.Property<int>("Admin_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Admin_id"), 1L, 1);
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Admin_id");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("SchoolSchedulingSystem.Models.Grade", b =>
                 {
                     b.Property<int>("Id")

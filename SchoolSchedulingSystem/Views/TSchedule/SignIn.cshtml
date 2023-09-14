@@ -1,0 +1,22 @@
+﻿@model SchoolSchedulingSystem.Models.Admin
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Front_Layout.cshtml";
+}
+
+<form asp-action="SignIn" asp-controller="TSchedule">
+    <div class="form-group">
+    <label asp-for="username" class="control-label"></label>
+    <input asp-for="username" class="form-control" />
+    <span asp-validation-for="username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="password" class="control-label"></label>
+    <input asp-for="password" type="password" class="form-control" />
+    <span asp-validation-for="password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="button" value="Login" asp-controller="TSchedule" asp-action="Login" />
+    </div>
+</form>

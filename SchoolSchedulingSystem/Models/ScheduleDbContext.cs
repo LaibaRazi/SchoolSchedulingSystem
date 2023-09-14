@@ -9,5 +9,6 @@ namespace SchoolSchedulingSystem.Models
         }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

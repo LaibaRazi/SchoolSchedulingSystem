@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SchoolSchedulingSystem.Models;
 
 namespace SchoolSchedulingSystem.Controllers
@@ -9,10 +10,35 @@ namespace SchoolSchedulingSystem.Controllers
         readonly ScheduleDbContext db;
         public TScheduleController(ScheduleDbContext db) { this.db = db; }
         // GET: TScheduleController
+        
         public ActionResult Index()
         {
+
             var getteacher = db.Teachers.ToList();
             return View(getteacher);
+        }
+
+
+        public ActionResult Login() 
+        {
+            return View();
+            
+        }
+        [HttpPost]
+        public ActionResult Login(Admin Model) 
+        {
+            var login = db.Admins.Where(x => x.username == Model.username && x.password == Model.password).FirstOrDefault();
+            if(login != null) 
+            {
+            return RedirectToAction("Create");
+            }
+            else 
+            {
+                TempData["Error"] = "Invalid Login";
+                return RedirectToAction("SignIn");
+            }
+
+
         }
 
         // GET: TScheduleController/Details/5
@@ -94,5 +120,35 @@ namespace SchoolSchedulingSystem.Controllers
                 return View();
             }
         }
+
+        public ActionResult SignIn() 
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignIn(Admin Model)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                var data = new Admin()
+                {
+
+                    username = Model.username,
+                    password = Model.password
+                };
+                db.Admins.Add(data);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            return View("Index");
+        }
+
+
+        
+
     }
 }
