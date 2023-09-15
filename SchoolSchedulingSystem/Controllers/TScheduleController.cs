@@ -27,10 +27,26 @@ namespace SchoolSchedulingSystem.Controllers
         [HttpPost]
         public ActionResult Login(Admin Model) 
         {
-            var login = db.Admins.Where(x => x.username == Model.username && x.password == Model.password).FirstOrDefault();
-            if(login != null) 
+            var login = db.Admins.Where( x => x.username == Model.username && x.password == Model.password).FirstOrDefault();
+           
+          
+
+            if(login != null ) 
             {
-            return RedirectToAction("Create");
+                var role = login.role.ToString();
+                if (role == "Admin")
+                {
+                    
+                    return RedirectToAction("Create");
+                }
+                else if(role == "Teacher") 
+                {
+                    return RedirectToAction("Index");
+                }
+                else 
+                {
+                    return RedirectToAction("SignIn");
+                }
             }
             else 
             {
@@ -135,7 +151,7 @@ namespace SchoolSchedulingSystem.Controllers
             {
                 var data = new Admin()
                 {
-
+                    role=Model.role,
                     username = Model.username,
                     password = Model.password
                 };

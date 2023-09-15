@@ -33,6 +33,10 @@ namespace SchoolSchedulingSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

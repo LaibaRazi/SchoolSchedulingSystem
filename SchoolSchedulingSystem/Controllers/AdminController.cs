@@ -7,8 +7,6 @@ namespace SchoolSchedulingSystem.Controllers
 {
     public class AdminController : Controller
     {
-      
-
         public IActionResult Logout()
         {
             return View();

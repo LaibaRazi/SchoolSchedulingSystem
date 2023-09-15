@@ -11,7 +11,7 @@ using SchoolSchedulingSystem.Models;
 namespace SchoolSchedulingSystem.Migrations
 {
     [DbContext(typeof(ScheduleDbContext))]
-    [Migration("20230913175803_Initial")]
+    [Migration("20230915032028_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace SchoolSchedulingSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Admin_id"), 1L, 1);
 
                     b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
